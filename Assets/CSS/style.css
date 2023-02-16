@@ -35,8 +35,8 @@ html{
 /* STYLE DES LETTRES */
 #lettres{
    
-    margin-top: 2.5vh;
-    margin-bottom: 2vh;
+    margin-top: 15vh;
+    margin-bottom: 6vh;
     margin-left: 10%;
     margin-right: 10%;
     
@@ -61,6 +61,11 @@ html{
 #lettres img:hover{
     transition:all 0.1s linear;
     transform: scale(120%) translateY(-8%);
+}
+
+#lettres img:active{
+    transition:all 0.1s ease-in-out;
+    transform: scale(100%);
 }
 
 @keyframes lettreIntro {
@@ -105,7 +110,11 @@ html{
 }
 
 #salut{ 
-    font-size: 5vw;
+    font-size: 3vw;
+}
+
+.txtIntro{
+    font-size: 2vw;
 }
 
 .txtIntro b{
