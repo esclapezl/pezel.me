@@ -13,21 +13,106 @@ html{
     background-color: #e0deff;
 }
 
-#lettres{
-    margin-top: 200px;
+/* fonts */
 
+@font-face {
+    font-family: Mortend;
+    src: url(../Fonts/Mortend\ Bold.otf);
+}
+
+@font-face {
+    font-family: Perform;
+    src: url(../Fonts/PERFORM\ GENERIC\ Regular.otf);
+}
+
+@font-face {
+    font-family: Roseberry;
+    src: url(../Fonts/Roseberry.ttf);
+}
+
+
+
+/* STYLE DES LETTRES */
+#lettres{
+   
+    margin-top: 2.5vh;
+    margin-bottom: 2vh;
+    margin-left: 10%;
+    margin-right: 10%;
+    
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-
-    margin-bottom: 100px;
+    align-items:flex-start;
 }
 
-.lettre{
-    margin: 5px;
-    width: 10%;
+#lettres img{
+    margin: 2%;
+    height: 8%;
+    
+    display: block;
+    overflow: hidden;
+
+    animation: lettreIntro 0.9s backwards;
+    transition:all 0.3s linear;
 }
+
+/*monte la lettre quand on passe la souris*/
+#lettres img:hover{
+    transition:all 0.1s linear;
+    transform: scale(120%) translateY(-8%);
+}
+
+@keyframes lettreIntro {
+    from{
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Texte intro */
+.txtIntro{
+    font-family: 'Perform';
+    font-family: 'Mortend';
+    font-family: 'Roseberry';
+
+    font-size: 3vw;
+    text-align: center;
+    text-transform:uppercase;
+    color:white;
+
+    animation: txtIntroAnim 0.8s both 1s;
+    transition:all 0.1s linear;
+}
+
+
+
+@keyframes txtIntroAnim {
+    from{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+}
+
+#salut{ 
+    font-size: 5vw;
+}
+
+.txtIntro b{
+    color: #A19DFF;
+}
+
+
 
 #fleche{
     width: 3%;
