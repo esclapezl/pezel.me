@@ -20,6 +20,15 @@ function animateIntroTexte(){
     textes[0].style.animationDelay = '1s';
     textes[1].style.animationDelay = '1.8s';
     textes[2].style.animationDelay = '2.1s';
+
+    const liens = document.getElementsByClassName('link-wrapper');
+
+    let d = 3;
+    for(let l of liens)
+    {
+        l.style.animationDelay = d+'s';
+        d+=0.2;
+    }
 }
 
 animateIntroTexte();

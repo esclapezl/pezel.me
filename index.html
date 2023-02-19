@@ -7,13 +7,16 @@
     
     <title>pezel.org</title>
     <link rel="stylesheet" href="Assets/CSS/style.css">
-    <!--<link rel="icon" href="./favicon.ico" type="image/x-icon">-->
+    <link rel="icon" href="Assets/Images/PZ_webIcon.png" type="image/x-icon">
     <script src="Assets/JS/index.js" defer></script>
   </head>
 
   <body>
-
-    
+    <nav>   
+      <div id="icon">
+        <a href="#home"><img src="Assets/Images/PZ_contour.png"></a>
+      </div>
+    </nav>
 
     <div id="lettres">
       <img  src="Assets/Images/lettres/P.png">
@@ -23,11 +26,15 @@
       <img  src="Assets/Images/lettres/L.png">
     </div>
 
-    <div class="txtIntro" id="salut">Salut ! Moi c'est <b>Pezel</b></div>
-    <div class="txtIntro">Je m'appelle <b>Loic Esclapez</b> ,  je suis etudiant en informatique</div>
-    <div class="txtIntro">Et je suis passionne par l'informatique et la creation de jeux video</div>
+    <div class="txtIntro" id="salut">Salut,  Moi c'est <b>Pezel !</b></div>
+    
+      
+    <div class="txtIntro">Je m'appelle <b>Loic Esclapez</b> ,  je suis etudiant en informatique </div>
+    <div class="txtIntro">  et je suis passionne par la creation de jeux video</div>
+      
+    
 
-    <br>
+    
 
     <!--<div>
       <img id="fleche" src="Assets/Images/Icones/flèche.png">
@@ -36,15 +43,53 @@
 
 
     <main>
-        <div class="txtBox">
-          
+        <!-- <div class="txtBox">
+          <div class="txt">
+          <p>yoyo moi c'est lolo </p>
+          </div>
+        
+        </div> -->
+        <div id="liens">
+          <div class="link-wrapper"><a href="#more">•Plus sur moi</a></div>
+          <div class="link-wrapper"><a href="#projects">•Mes projets</a></div>
+          <div class="link-wrapper"><a href="#contact">•Me contacter</a></div>
         </div>
-    </main>
-	  
-  </body>
+        
+        
+      </main>
+      
 
-  <footer>
+      <script src="Assets/JS/casseBrique.js" defer></script>
+      <link rel="stylesheet" href="Assets/CSS/casseBrique.css">
+      <div id="casseBrique">
 
-  </footer>
+        <!-- FENETRE DE JEU -->
+        <div id="jeu">
+
+          <div class="button"  onclick="commencerJeu()">
+            PLAY
+          </div>
+
+          <div class="button"  onclick="retryLevel()"  style="display: none;">
+            RETRY
+          </div>
+
+          <div class="button"  onclick="nextLevel()"  style="display: none;">
+            NEXT LEVEL
+          </div>
+
+          <canvas id="Game"></canvas>
+        </div>
+        <div id="gameFooter">
+          <span id="lvl"></span><span id="score"></span>
+        </div>
+      </div>
+      
+    </body>
+    
+    <!-- <footer>
+      
+      <img class="forme" src="Assets/Images/forme1.png">
+    </footer> -->
 
 </html>

@@ -9,9 +9,29 @@ Plus foncé au plus clair
 #e0deff
 */
 
-html{
-    background-color: #e0deff;
+:root{
+    --violetPastel:#e0deff;
+    --violetClair:#A19DFF;
+    --violet:#8A85FF;
+    --violetFoncee:#242170;
+    --violetFonceeDesature:#2c2b3a;
+    --violetQuiClaque:#3700ff;
+    --violetFooter:#736ef7;
 }
+
+
+
+html{
+    background-color: var(--violetPastel);
+    height: 100%;
+    overflow-x: hidden; 
+}
+
+body{
+    background-color: var(--violetPastel);
+}
+
+
 
 /* fonts */
 
@@ -30,15 +50,29 @@ html{
     src: url(../Fonts/Roseberry.ttf);
 }
 
+/* Icone */
+#icon img{
+    width: 60px;
+    margin-top: 2%;
+    margin-left: 2%;
+    transition:all 0.1s linear;
+    /* filter: saturate(-3) hue-rotate(180deg); */
+}
+
+#icon img:hover{
+    transition:all 0.1s linear;
+    transform: scale(120%)
+}
+
 
 
 /* STYLE DES LETTRES */
 #lettres{
-   
-    margin-top: 15vh;
+    
+    margin-top: 3vh;
     margin-bottom: 6vh;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 5vh;
+    margin-right: 5vh;
     
     display: flex;
     flex-direction: row;
@@ -47,6 +81,7 @@ html{
 }
 
 #lettres img{
+    cursor:grab;
     margin: 2%;
     height: 8%;
     
@@ -64,6 +99,7 @@ html{
 }
 
 #lettres img:active{
+    cursor:grabbing;
     transition:all 0.1s ease-in-out;
     transform: scale(100%);
 }
@@ -82,17 +118,29 @@ html{
 
 /* Texte intro */
 .txtIntro{
+
+    cursor:default;
     font-family: 'Perform';
     font-family: 'Mortend';
     font-family: 'Roseberry';
 
-    font-size: 3vw;
     text-align: center;
     text-transform:uppercase;
-    color:white;
 
     animation: txtIntroAnim 0.8s both 1s;
     transition:all 0.1s linear;
+
+    margin: auto;
+
+    font-size: 2.5em;
+    color: var(--violet);
+    overflow-wrap: break-word;
+}
+
+
+
+p{
+    font-family: 'Roseberry';
 }
 
 
@@ -100,25 +148,23 @@ html{
 @keyframes txtIntroAnim {
     from{
         opacity: 0;
-        transform: translateX(-100%);
+        /* transform: translateX(-100%); */
     }
     to{
         opacity: 1;
-        transform: translateX(0);
+        /* transform: translateX(0); */
     }
     
 }
 
 #salut{ 
-    font-size: 3vw;
+    font-size: 4rem;
+    
 }
 
-.txtIntro{
-    font-size: 2vw;
-}
 
 .txtIntro b{
-    color: #A19DFF;
+    color: var(--violetFoncee)
 }
 
 
@@ -129,4 +175,99 @@ html{
     margin-left: auto;
     margin-right: auto;
 }
+
+#txtBoxWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+}
+
+/* text boxes*/
+.txtBox{
+    /* background-color: white; */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+
+    margin: 5%;
+    margin-top: 2%;
+    max-width: 1500px;
+    
+
+    padding: 2%;
+}
+
+.txtBox .txt{
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    overflow-wrap: break-word;
+    font-family: 'Perform';
+    font-family: 'Roseberry';
+}
+
+.txt{
+    margin: 1%;
+}
+
+#liens{
+    margin-top: 2vh;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2vh;
+
+    
+}
+
+.link-wrapper{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    transition:all 0.1s linear;
+    animation: txtIntroAnim 0.8s both 1s;
+}
+
+.link-wrapper a{
+    font-family: 'Roseberry';
+
+    text-align: center;
+    text-transform:uppercase;
+
+    
+    transition:all 0.1s linear;
+
+    margin: auto;
+    
+
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--violetFoncee);
+   
+    overflow-wrap: break-word;
+
+    text-decoration: none;
+}
+
+.link-wrapper:hover{
+    transition:all 0.1s linear;
+    transform: scale(120%);
+
+}
+
+body{
+    margin: 0;
+}
+
+
+
+
+
+/* .txtIntro::selection{
+    background-color: rgb(89, 255, 241);
+} */
+
 
