@@ -37,7 +37,7 @@ body{
 
 
 /* fonts */
-
+/*
 @font-face {
     font-family: Mortend;
     src: url(../Fonts/Mortend\ Bold.otf);
@@ -47,17 +47,24 @@ body{
     font-family: Perform;
     src: url(../Fonts/PERFORM\ GENERIC\ Regular.otf);
 }
-
+*/
 @font-face {
     font-family: Roseberry;
     src: url(../Fonts/Roseberry.ttf);
 }
 
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;display=swap');
+
+
+
+
+
 /* Icone */
 #icon img{
     width: 60px;
-    margin-top: 2%;
-    margin-left: 2%;
+    margin-top: 1%;
+    margin-left: 1%;
     transition:all 0.1s linear;
     /* filter: saturate(-3) hue-rotate(180deg); */
 }
@@ -72,10 +79,10 @@ body{
 /* STYLE DES LETTRES */
 #lettres{
     
-    margin-top: 3vh;
-    margin-bottom: 6vh;
-    margin-left: 5vh;
-    margin-right: 5vh;
+    margin-top: 4vh;
+    margin-bottom: 5vh;
+    margin-left: 3vh;
+    margin-right: 3vh;
     
     display: flex;
     flex-direction: row;
@@ -123,20 +130,24 @@ body{
 .txtIntro{
 
     cursor:default;
-    font-family: 'Perform';
-    font-family: 'Mortend';
-    font-family: 'Roseberry';
+    /*font-family: 'Perform';
+    font-family: 'Mortend';*/
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
 
     text-align: center;
-    text-transform:uppercase;
+
 
     animation: txtIntroAnim 0.8s both 1s;
     transition:all 0.1s linear;
 
     margin: auto;
 
-    font-size: 2.5em;
+
+    font-size: 1.5em;
     color: var(--violet);
+
+
     overflow-wrap: break-word;
 }
 
@@ -161,13 +172,15 @@ p{
 }
 
 #salut{ 
-    font-size: 4rem;
-    
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5%;
 }
 
 
 .txtIntro b{
-    color: var(--violetFoncee)
+    color: var(--violetFoncee);
+
 }
 
 
@@ -217,7 +230,7 @@ p{
 }
 
 #liens{
-    margin-top: 2vh;
+    margin-top: 5%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -236,6 +249,8 @@ p{
 
 .link-wrapper a{
     font-family: 'Roseberry';
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
 
     text-align: center;
     text-transform:uppercase;
