@@ -59,10 +59,11 @@
       </main>
       
 
+      
       <script src="Assets/JS/casseBrique.js" defer></script>
       <link rel="stylesheet" href="Assets/CSS/casseBrique.css">
       <div id="casseBrique">
-
+        <div id="secret" onclick="secret()"></div>
         <!-- FENETRE DE JEU -->
         <div id="jeu">
 
@@ -71,7 +72,7 @@
           </div>
 
           <div class="button"  onclick="retryLevel()"  style="display: none;">
-            RETRY
+            REPLAY
           </div>
 
           <div class="button"  onclick="nextLevel()"  style="display: none;">
@@ -84,12 +85,5 @@
           <span id="lvl"></span><span id="score"></span>
         </div>
       </div>
-      
     </body>
-    
-    <!-- <footer>
-      
-      <img class="forme" src="Assets/Images/forme1.png">
-    </footer> -->
-
 </html>

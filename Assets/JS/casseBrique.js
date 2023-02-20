@@ -1,3 +1,8 @@
+function secret()
+{
+    document.getElementById("secret").style.display = "none";
+}
+
 var canvas = document.getElementById("Game");
 var ctx = canvas.getContext("2d");
 
@@ -47,19 +52,37 @@ function nextLevel()
     brickRowCount = 1 + Math.floor(lvl/3)
     calcBricks();
     //re setup la balle et augment la vitesse
-    ballX = canvas.width/2;
+    ballX = canvas.width/2 + ((Math.round(Math.random()) * 2 - 1)*Math.random()*canvas.width/4);
     ballY = canvas.height*0.8;
-    dx = (1+lvl*0.2);
+    dx = (Math.round(Math.random()) * 2 - 1)*(1+lvl*0.2);
     dy = -(1+lvl*0.2);
+
+    ballTrailX = [];
+    ballTrailY = [];
+
+    barSize = 30-lvl;
+    if(barSize <15)
+    {
+        barSize = 15;
+    }
 
     levelOver = false;
 }
 
 function retryLevel(){
     retry.style.display="none";
-    lvl = 0;
-    score = 0;
-    scoreSpan.innerHTML="SCORE : 0";
+
+    if(lvl == 1)
+    {
+        lvl = 0
+    }
+    else
+    {
+        lvl -= 2;
+    }
+    
+    
+    
     gameOver = false;
     nextLevel();
 }
@@ -92,12 +115,42 @@ function drawBall() {
     ctx.beginPath();
 
     ctx.rect(ballX-ballSize/2,ballY-ballSize/2, ballSize,ballSize);
-    ctx.fillStyle = "#8A85FF";
+    ctx.fillStyle = "#242170";
     ctx.fill();
 
     ctx.closePath();
 
     mouvementBalle();
+}
+
+
+let ballTrailX = [];
+let ballTrailY = [];
+let nbTrail = 20;
+function drawBallTrail()
+{
+    if(ballTrailX.length == nbTrail)
+    {
+        ballTrailX.pop();
+    }
+    ballTrailX.unshift(ballX);
+    ballTrailY.unshift(ballY);
+
+    
+
+    for(let i = 0;i<ballTrailX.length;i++)
+    {
+        let trailSize = ballSize-((10/nbTrail)*i);
+        ctx.beginPath();
+        ctx.rect(ballTrailX[i]-trailSize/2,ballTrailY[i]-trailSize/2, trailSize,trailSize);
+        // ctx.fillStyle = "rgb("+(133+((255-133)/nbTrail)*i)+","+(138+((255-138)/nbTrail)*i)+",255)";
+        ctx.fillStyle = "rgb(255,255,255)";
+        ctx.fill();
+        ctx.closePath();
+        
+    }
+
+    
 }
 
 var barX = canvas.width/2;
@@ -108,7 +161,7 @@ function drawBar()
     ctx.beginPath();
 
     ctx.rect(barX, barY, barSize,barHeight);
-    ctx.fillStyle = "#8A85FF";
+    ctx.fillStyle = "#242170";
     ctx.fill();
 
     ctx.closePath();
@@ -140,6 +193,7 @@ function draw()
     if(!gameOver)
     {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawBallTrail();
         drawBall();
         drawBar();
         collisionDetection();
@@ -179,6 +233,8 @@ function mouvementBalle()
         dy = 0;
         dx = 0;
         gameOver = true;
+        score -=brickTotal;
+        scoreSpan.innerHTML="SCORE : "+score;
     }
     //execute le mvmt
     ballY += dy;
@@ -201,6 +257,7 @@ let brickRowCount = 1;
 let brickColumnCount = 2;
 
 let brickTotal = brickColumnCount*brickRowCount;
+let bricksRemaining = brickTotal;
 let brickOffsetTop = 0;
 let brickOffsetLeft = 0;
 
@@ -213,6 +270,7 @@ const bricks = [];
 function calcBricks()
 {
     brickTotal = brickColumnCount*brickRowCount;
+    bricksRemaining = brickTotal;
     brickOffsetTop = canvas.height/10;
     brickOffsetLeft = canvas.width/20;
 
@@ -264,9 +322,9 @@ function collisionDetection() {
           ) {
             score++;
             scoreSpan.innerHTML = "SCORE : "+score;
-            brickTotal--;
+            bricksRemaining--;
             b.status = 0;
-            if(brickTotal==0)
+            if(bricksRemaining==0)
             {
                 levelOver = true;
                 dy = 0;

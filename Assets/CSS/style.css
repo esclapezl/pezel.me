@@ -17,6 +17,9 @@ Plus foncé au plus clair
     --violetFonceeDesature:#2c2b3a;
     --violetQuiClaque:#3700ff;
     --violetFooter:#736ef7;
+    --bleuLien:#2c30ff;
+    
+    --animationSpeedLink:0.2s;
 }
 
 
@@ -227,7 +230,7 @@ p{
     margin-left: 5%;
     margin-right: 5%;
     margin-bottom: 5%;
-    transition:all 0.1s linear;
+    transition:all var(--animationSpeedLink) linear;
     animation: txtIntroAnim 0.8s both 1s;
 }
 
@@ -238,7 +241,7 @@ p{
     text-transform:uppercase;
 
     
-    transition:all 0.1s linear;
+    transition:all var(--animationSpeedLink) linear;
 
     margin: auto;
     
@@ -253,9 +256,33 @@ p{
 }
 
 .link-wrapper:hover{
-    transition:all 0.1s linear;
-    transform: scale(120%);
+    transition:all var(--animationSpeedLink) linear;
+    transform: scale(100%); 
 
+}
+
+.link-wrapper:hover a{
+    color:var(--bleuLien);
+
+}
+
+
+.link-wrapper:after{
+    content:"";
+    position: absolute;
+    background-color: var(--bleuLien);
+    height:5px;
+    width:0;
+    left:0;
+    bottom: -5px;
+    transition: var(--animationSpeedLink);
+}
+
+
+
+.link-wrapper:hover:after{
+    width: 100%;
+    transition: var(--animationSpeedLink);
 }
 
 body{
