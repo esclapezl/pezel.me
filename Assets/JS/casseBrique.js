@@ -18,9 +18,12 @@ let next = buttons[2];
 
 //GAME SETTINGS
 let ballSize = 10;
-let barSize = 30;
+
+let defaultBarSize= 50;
+let barSize = defaultBarSize;
+
 let barHeight = 5
-let gameSpeed = 10;
+let gameSpeed = 20;
 let gameOver = false;
 let levelOver = false;
 
@@ -60,7 +63,8 @@ function nextLevel()
     ballTrailX = [];
     ballTrailY = [];
 
-    barSize = 30-lvl;
+
+    barSize = defaultBarSize-lvl;
     if(barSize <15)
     {
         barSize = 15;
