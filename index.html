@@ -59,31 +59,60 @@
       </main>
       
 
-      
-      <script src="Assets/JS/casseBrique.js" defer></script>
-      <link rel="stylesheet" href="Assets/CSS/casseBrique.css">
-      <div id="casseBrique">
-        <!--<div id="secret" onclick="secret()"></div>-->
-        <!-- FENETRE DE JEU -->
-        <div id="jeu">
+      <link rel="stylesheet" href="Assets/CSS/jeu.css">
 
-          <div class="button"  onclick="commencerJeu()">
+      <!-- <script src="Assets/JS/casseBrique.js" defer></script>
+      <div id="jeu">
+    
+        
+        <div class="fenetreJeu">
+
+          <div class="CB_button button"  onclick="CB_commencerJeu()">
             PLAY
           </div>
 
-          <div class="button"  onclick="retryLevel()"  style="display: none;">
+          <div class="CB_button button"  onclick="CB_retryLevel()"  style="display: none;">
             REPLAY
           </div>
 
-          <div class="button"  onclick="nextLevel()"  style="display: none;">
+          <div class="CB_button button"  onclick="CB_nextLevel()"  style="display: none;">
             NEXT LEVEL
           </div>
 
-          <canvas id="Game"></canvas>
+          <canvas id="CB_Canvas"></canvas>
         </div>
-        <div id="gameFooter">
-          <span id="lvl"></span><span id="score"></span>
+        <div class="gameFooter">
+          <span id="CB_lvl"></span><span id="CB_score"></span>
         </div>
-      </div>
+      </div> -->
+
+      <script src="Assets/JS/snake.js" defer></script>
+      <div id="jeu">
+        
+        
+        <div class="fenetreJeu">
+
+          <div class="SN_button button"  onclick="SN_commencerJeu()">
+            PLAY
+          </div>
+
+          <div class="SN_button button"  onclick="SN_retry()"  style="display: none;">
+            REPLAY
+          </div>
+
+          <canvas id="SN_Canvas"></canvas>
+        </div>
+        <div class="gameFooter">
+          <span id="SN_score"></span><span id="SN_highScore"></span>
+        </div>
+      </div> 
+
+
+
+
+      
+
+
+
     </body>
 </html>

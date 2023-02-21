@@ -17,13 +17,13 @@ animateLetter();
 
 function animateIntroTexte(){
     const textes = document.getElementsByClassName('txtIntro');
-    textes[0].style.animationDelay = '1s';
-    textes[1].style.animationDelay = '1.8s';
-    textes[2].style.animationDelay = '2.1s';
+    textes[0].style.animationDelay = '1.2s';
+    textes[1].style.animationDelay = '1.4s';
+    textes[2].style.animationDelay = '1.6s';
 
     const liens = document.getElementsByClassName('link-wrapper');
 
-    let d = 3;
+    let d = 1.8;
     for(let l of liens)
     {
         l.style.animationDelay = d+'s';

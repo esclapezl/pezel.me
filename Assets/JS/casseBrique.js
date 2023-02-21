@@ -1,20 +1,21 @@
-function secret()
-{
-    document.getElementById("secret").style.display = "none";
-}
+// function secret()
+// {
+//     document.getElementById("secret").style.display = "none";
+// }
 
-var canvas = document.getElementById("Game");
+var canvas = document.getElementById("CB_Canvas");
 var ctx = canvas.getContext("2d");
 
 
-let buttons =  document.getElementsByClassName("button");
 
-let lvlSpan = document.getElementById("lvl");
-let scoreSpan = document.getElementById("score");
 
-let play = buttons[0];
-let retry = buttons[1];
-let next = buttons[2];
+let lvlSpan = document.getElementById("CB_lvl");
+let scoreSpan = document.getElementById("CB_sscore");
+
+const buttons =  document.getElementsByClassName("CB_button");
+const play = buttons[0];
+const retry = buttons[1];
+const next = buttons[2];
 
 //GAME SETTINGS
 let ballSize = 10;
@@ -35,19 +36,24 @@ var dy = -1;
 
 let lvl = 0;
 let score = 0;
-function commencerJeu()
+function CB_commencerJeu()
 {
     lvl = 0;
     scoreSpan.innerHTML="SCORE : 0";
     play.style.display = "none";
     setInterval(gameLoop, gameSpeed);
-    nextLevel();
+    CB_nextLevel();
 }
 
 
-function nextLevel()
+function CB_nextLevel()
 {
     lvl++;
+    if(lvl < 14)
+    {
+        lvl = 14;
+    }
+
     lvlSpan.innerHTML = "LVL "+lvl;
 
     next.style.display="none";
@@ -73,7 +79,7 @@ function nextLevel()
     levelOver = false;
 }
 
-function retryLevel(){
+function CB_retryLevel(){
     retry.style.display="none";
 
     if(lvl == 1)
@@ -88,7 +94,7 @@ function retryLevel(){
     
     
     gameOver = false;
-    nextLevel();
+    CB_nextLevel();
 }
 
 function gameLoop()
@@ -123,9 +129,9 @@ function drawBall() {
     ctx.fill();
 
     ctx.closePath();
-
-    mouvementBalle();
 }
+
+   
 
 
 let ballTrailX = [];
@@ -199,6 +205,7 @@ function draw()
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawBallTrail();
         drawBall();
+        mouvementBalle();
         drawBar();
         collisionDetection();
         drawBricks();
