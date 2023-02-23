@@ -31,7 +31,7 @@ function SN_retry()
     scoreSpan.innerHTML = "SCORE:"+score
 }
 
-let gameSpeed = 150;
+let gameSpeed = 100;
 let gameOver = false;
 function gameLoop()
 {
