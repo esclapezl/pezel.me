@@ -35,6 +35,54 @@ body{
 }
 
 
+#navWrapper{
+    top: 20px;
+    right: 30px;
+    position: fixed;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 2vw; 
+}
+
+
+#navWrapper div{
+    width: 7vw;
+    font-size: 1vw;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 30px; 
+    transition: 0.1s ease-in-out;
+
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid var(--violetFoncee);
+    
+}
+
+#navWrapper div:hover{
+   transition: 0.2s ease-in-out;
+    background-color: white;
+
+    transform: scale(105%);
+    
+
+}
+
+
+
+.nav{
+    text-transform: uppercase;
+    font-family: 'poppins-extra-bold';
+    font-size: 1.3em;
+    color: var(--violetFoncee);
+    text-decoration: none;
+    
+}
 
 /* fonts */
 /*
@@ -49,12 +97,44 @@ body{
 }
 */
 @font-face {
-    font-family: Roseberry;
+    font-family: RoseBerry;
     src: url(../Fonts/Roseberry.ttf);
+
+    
+}
+
+@font-face {
+    font-family: poppins;
+    src: url(../Fonts/poppins/Poppins-Regular.ttf);
+    
+}
+
+@font-face {
+    font-family: poppins-semi-bold;
+    src: url(../Fonts/poppins/Poppins-SemiBold.ttf);
+    
+
+}
+
+@font-face {
+    font-family: poppins-bold;
+    src: url(../Fonts/poppins/Poppins-Bold.ttf);
+    
+    
+}
+
+@font-face {
+    font-family: poppins-extra-bold;
+    src: url(../Fonts/poppins/Poppins-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: poppins-black;
+    src: url(../Fonts/poppins/Poppins-Black.ttf);
 }
 
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;display=swap');
+
 
 
 
@@ -85,7 +165,7 @@ body{
 .icon{
     
     position: fixed;
-    top: 5px;
+    top: 10px;
     /* background-color: white; */
     /* border-radius: 5px; */
     cursor: pointer;
@@ -97,35 +177,15 @@ body{
 }
 
 #PzIcon{
-  left: 5px;
+  left: 10px;
 }
 
 #darkModeIcon{
    right: 80px;
 }
 
-#menu{
-    right: 5px;
-}
 
-#menuDeroulant{
-    position: absolute;
-    cursor: default;
-    background-color: white;
-    border-radius: 10px;
-    padding: 5px;
 
-    
-    row-gap: 25px;
-
-    display: flex;
-    flex-direction: column;
-    
-}
-
-#menuDeroulant img{
-    height: 25px;
-}
 
 
 
@@ -183,31 +243,28 @@ body{
 .txtIntro{
 
     cursor:default;
-    /*font-family: 'Perform';
-    font-family: 'Mortend';*/
-    font-family: 'Poppins', sans-serif;
-    font-weight: bolder;
-
+ 
+    font-family: 'Poppins-semi-bold';
+    font-weight:normal;
     text-align: center;
+    overflow-wrap: break-word;
+    font-size: 1.5em;
 
-
-    animation: txtIntroAnim 0.8s both 1s;
-    transition:all 0.1s linear;
+    
+    color: var(--violetFonceeDesature);
 
     margin: auto;
+    
 
-
-    font-size: 1.5em;
-    color: var(--violet);
-
-
-    overflow-wrap: break-word;
+    animation: txtIntroAnim 0.8s both 1s;
+    transition:all 0.1s linear;    
 }
 
 
 
 p{
-    font-family: 'Roseberry';
+    font-family: 'poppins';
+    
 }
 
 
@@ -226,7 +283,9 @@ p{
 
 #salut{ 
     font-size: 3rem;
+    font-family: 'Poppins-extra-bold';
     text-transform: uppercase;
+    color: var(--violet);
     margin-bottom: 0.5%;
 }
 
@@ -288,6 +347,7 @@ p{
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 2vh;
+    
 
     
 }
@@ -301,9 +361,9 @@ p{
 }
 
 .link-wrapper a{
-    font-family: 'Roseberry';
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
+
+    font-family: 'Poppins-bold';
+   
 
     text-align: center;
     text-transform:uppercase;
@@ -359,10 +419,10 @@ body{
 
 #more{
     background-color: white;
-    margin: 5%;
+   
 
     height: 1000px;
-    border-radius: 10px;
+   
     overflow: hidden;
 
     display: flex;
@@ -372,8 +432,8 @@ body{
     background-color: var(--violet);
     width: 40%;
     height: 100%;
-    border-radius: 10px;
-    border-top-right-radius: 0px;
+   
+
     justify-self: start;
 }
 
@@ -381,9 +441,7 @@ body{
     background-color: var(--violetClair);
     width: 60%;
     height: 40%;
-    border-radius: 10px;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
+ 
     justify-self: end
 }
 
