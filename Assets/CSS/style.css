@@ -23,16 +23,59 @@ Plus foncé au plus clair
 }
 
 
+/* fonts */
+/*
+@font-face {
+    font-family: Mortend;
+    src: url(../Fonts/Mortend\ Bold.otf);
+}
+
+@font-face {
+    font-family: Perform;
+    src: url(../Fonts/PERFORM\ GENERIC\ Regular.otf);
+}
+*/
+@font-face {
+    font-family: RoseBerry;
+    src: url(../Fonts/Roseberry.ttf);
+}
+
+@font-face {
+    font-family: poppins;
+    src: url(../Fonts/poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: poppins-semi-bold;
+    src: url(../Fonts/poppins/Poppins-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: poppins-bold;
+    src: url(../Fonts/poppins/Poppins-Bold.ttf);
+}
+
+@font-face {
+    font-family: poppins-extra-bold;
+    src: url(../Fonts/poppins/Poppins-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: poppins-black;
+    src: url(../Fonts/poppins/Poppins-Black.ttf);
+}
 
 html{
     background-color: var(--violetPastel);
     height: 100%;
     overflow-x: hidden; 
+    font-family: 'poppins';
 }
 
 body{
     background-color: var(--violetPastel);
 }
+
 
 
 #navWrapper{
@@ -43,6 +86,7 @@ body{
     flex-direction: row;
     align-items: center;
     column-gap: 2vw; 
+    z-index: 50;
 }
 
 
@@ -91,67 +135,7 @@ body{
     
 }
 
-/* fonts */
-/*
-@font-face {
-    font-family: Mortend;
-    src: url(../Fonts/Mortend\ Bold.otf);
-}
 
-@font-face {
-    font-family: Perform;
-    src: url(../Fonts/PERFORM\ GENERIC\ Regular.otf);
-}
-*/
-@font-face {
-    font-family: RoseBerry;
-    src: url(../Fonts/Roseberry.ttf);
-}
-
-@font-face {
-    font-family: poppins;
-    src: url(../Fonts/poppins/Poppins-Regular.ttf);
-    
-}
-
-@font-face {
-    font-family: poppins-semi-bold;
-    src: url(../Fonts/poppins/Poppins-SemiBold.ttf);
-    
-
-}
-
-@font-face {
-    font-family: poppins-bold;
-    src: url(../Fonts/poppins/Poppins-Bold.ttf);
-}
-
-@font-face {
-    font-family: poppins-extra-bold;
-    src: url(../Fonts/poppins/Poppins-ExtraBold.ttf);
-}
-
-@font-face {
-    font-family: poppins-black;
-    src: url(../Fonts/poppins/Poppins-Black.ttf);
-}
-
-
-
-
-
-
-
-/* nav{
-    background-color: white;
-    position: fixed;
-    display: flex;
-    padding: 10px;
-    width: 100%;
-    top: 0px;
-    z-index: 10;
-    align-items: center;
-} */
 
 /* Icone */
 .icon img{
@@ -176,14 +160,10 @@ body{
     /* background-color: white; */
     /* border-radius: 5px; */
     cursor: pointer;
+    z-index: 50;
 
 }
 
-/*
-.icon img{
-    filter: invert(10%) sepia(35%) saturate(6868%) hue-rotate(240deg) brightness(95%) contrast(95%);
-}
-*/
 
 
 #PzIcon{
@@ -196,20 +176,47 @@ body{
     width: 50px;
 }
 
-#darkModeIcon{
-   right: 80px;
+
+
+
+
+#bg{
+    position: absolute;
 }
 
+#bg div img{
+    position: absolute;
+    z-index: 0;
+}
 
+@keyframes bottomBarAnim {
+    
+    from{
+        transform: translateX(-800px) translateY(800px);
+    }
+    to{
+        transform: translate(0);
+    }
+}
+
+@keyframes topBarAnim {
+    
+    from{
+        transform: translateX(800px) translateY(-800px);
+    }
+    to{
+        transform: translate(0);
+    }
+}
 
 
 
 
 /* STYLE DES LETTRES */
 #lettres{
-    
-    margin-top:13vh;
-    margin-bottom: 5vh;
+    z-index: 1;
+    margin-top:18vh;
+    margin-bottom: 13vh;
     margin-left: 3vh;
     margin-right: 3vh;
     
@@ -217,12 +224,13 @@ body{
     flex-direction: row;
     justify-content: center;
     align-items:flex-start;
+    flex-grow: 3;
 }
 
 #lettres img{
     cursor:grab;
-    margin: 2%;
-    height: 8%;
+    margin: 1%;
+    width: 9%;
     
     display: block;
     overflow: hidden;
@@ -255,33 +263,8 @@ body{
 }
 
 
-/* Texte intro */
-.txtIntro{
-
-    cursor:default;
- 
-    font-family: 'Poppins-semi-bold';
-    font-weight:normal;
-    text-align: center;
-    overflow-wrap: break-word;
-    font-size: 1.5em;
-
-    
-    color: var(--violetFonceeDesature);
-
-    margin: auto;
-    
-
-    animation: txtIntroAnim 0.8s both 1s;
-    transition:all 0.1s linear;    
-}
 
 
-
-p{
-    font-family: 'poppins';
-    
-}
 
 
 
@@ -297,13 +280,55 @@ p{
     
 }
 
+#home{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#subHome{
+    z-index: 2;
+    background-color: white;
+    justify-self: flex-end;
+    flex-grow: 8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 #salut{ 
-    font-size: 3rem;
+    font-size: 4rem;
     font-family: 'Poppins-extra-bold';
     text-transform: uppercase;
     color: var(--violet);
     margin-bottom: 0.5%;
+    
 }
+
+
+/* Texte intro */
+.txtIntro{
+
+    cursor:default;
+ 
+    font-family: 'Poppins-semi-bold';
+    font-weight:normal;
+    text-align: start;
+    overflow-wrap: break-word;
+    font-size: 2em;
+    
+
+    
+    color: var(--violetFonceeDesature);
+
+    margin: auto;
+    margin-left: 4%;
+    
+
+    animation: txtIntroAnim 0.8s both 1s;
+    transition:all 0.1s linear;    
+}
+
 
 
 .txtIntro b{
@@ -313,65 +338,22 @@ p{
 
 
 
-#fleche{
-    width: 3%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
 
-#txtBoxWrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: center ;
-}
 
-/* text boxes*/
-.txtBox{
-    /* background-color: white; */
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
-
-    margin: 5%;
-    margin-top: 2%;
-    max-width: 1500px;
-    
-
-    padding: 2%;
-}
-
-.txtBox .txt{
-    text-align: center;
-    font-size: 2rem;
-    color: white;
-    overflow-wrap: break-word;
-    font-family: 'Perform';
-    font-family: 'Roseberry';
-}
-
-.txt{
-    margin: 1%;
-}
 
 #liens{
     margin-top: 3%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 2vh;
     
-
-    
+    margin-bottom: 3%;
 }
 
 .link-wrapper{
     margin-left: 3%;
     margin-right: 3%;
-    margin-bottom: 5%;
+   
     transition:all var(--animationSpeedLink) linear;
     animation: txtIntroAnim 0.8s both 1s;
 }
@@ -407,7 +389,6 @@ p{
 
 .link-wrapper:hover a{
     color:var(--bleuLien);
-
 }
 
 
@@ -482,11 +463,5 @@ footer div{
     }
   }
 
-
-
-
-/* .txtIntro::selection{
-    background-color: rgb(89, 255, 241);
-} */
 
 

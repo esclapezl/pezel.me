@@ -33,7 +33,62 @@
 
 
 
-    <div id="home" style ="height: 90vh;">
+    <div id="home" style ="height: 100vh;">
+
+      <div id="bg">
+        <div id="bottom">
+          <!-- <img style="bottom:-530px;  left: -300px;"src="Assets/Images/barre_BG.png">
+          <img style="bottom:-430px;  left: -700px;"src="Assets/Images/barre_BG.png">
+          <img style="bottom:-230px;  left: -700px;"src="Assets/Images/barre_BG.png"> -->
+
+          <img style="bottom:-800px;  left: -300px;"src="Assets/Images/barre_BG.png">
+          <img style="bottom:-900px;  left: -460px;"src="Assets/Images/barre_BG.png">
+
+          <img style="bottom:-1050px;  left: -350px;"src="Assets/Images/barre_BG.png">
+          <img style="bottom:-1000px;  left: -240px;"src="Assets/Images/barre_BG.png">
+          <img style="bottom:-750px;  left: 70px;"src="Assets/Images/barre_BG.png">
+          <img style="bottom:-950px;  left: -70px;"src="Assets/Images/barre_BG.png">
+          <img style="bottom:-650px;  left: 290px;"src="Assets/Images/barre_BG.png">
+          <img style="bottom:-1000px;  left: 0px;"src="Assets/Images/barre_BG.png">
+          <img style="bottom:-1050px;  left: 10px;"src="Assets/Images/barre_BG.png">
+
+          <img style="bottom:-1150px;  left: 150px;"src="Assets/Images/barre_BG.png">
+          <img style="bottom:-1100px;  left: 260px;"src="Assets/Images/barre_BG.png">
+
+          <img style="bottom:-600px;  left: 900px;"src="Assets/Images/barre_BG.png">
+          <img style="bottom:-900px;  left: 660px;"src="Assets/Images/barre_BG.png">
+          <img style="bottom:-800px;  left: 820px;"src="Assets/Images/barre_BG.png">
+          <img style="bottom:-1000px;  left: 680px;"src="Assets/Images/barre_BG.png">
+          <img style="bottom:-800px;  left: 940px;"src="Assets/Images/barre_BG.png">
+          <img style="bottom:-1050px;  left: 750px;"src="Assets/Images/barre_BG.png">
+          <img style="bottom:-1100px;  left: 760px;"src="Assets/Images/barre_BG.png">
+
+          <img style="bottom:-1000px;  left: 1200px;"src="Assets/Images/barre_BG.png">
+          <img style="bottom:-750px;  left: 1510px;"src="Assets/Images/barre_BG.png">
+          <img style="bottom:-950px;  left: 1370px;"src="Assets/Images/barre_BG.png">
+          <img style="bottom:-650px;  left: 1730px;"src="Assets/Images/barre_BG.png">
+          
+          
+        </div>
+
+        <div id="top">
+          <img style="top:-50px;  left: -250px;"src="Assets/Images/barre_BG.png">
+          <img style="top:-50px;  left: -190px;"src="Assets/Images/barre_BG.png">
+          <img style="top:-400px;  left: 220px;"src="Assets/Images/barre_BG.png">
+          <img style="top:-500px;  left: 380px;"src="Assets/Images/barre_BG.png">
+
+          <img style="top:-500px;  left: 880px;"src="Assets/Images/barre_BG.png">
+          <img style="top:-300px;  left: 750px;"src="Assets/Images/barre_BG.png">
+          <img style="top:-400px;  left: 920px;"src="Assets/Images/barre_BG.png">
+          <img style="top:-500px;  left: 1090px;"src="Assets/Images/barre_BG.png">
+
+          <img style="top:-500px;  left: 1600px;"src="Assets/Images/barre_BG.png">
+          <img style="top:-400px;  left: 1560px;"src="Assets/Images/barre_BG.png">
+          <img style="top:-460px;  left: 1680px;"src="Assets/Images/barre_BG.png">
+        </div>
+        
+        
+      </div>
     
       <div id="lettres">
         <img  src="Assets/Images/lettres/P.png">
@@ -43,16 +98,19 @@
         <img  src="Assets/Images/lettres/L.png">
       </div>
 
-      <div class="txtIntro" id="salut">Salut,  Moi c'est <b>Pezel</b> !</div>
-      
-        
-      <div class="txtIntro">Je m'appelle <b>Loïc Esclapez</b>,   je suis étudiant en informatique </div>
-      <div class="txtIntro">  et je suis passionné par la création de jeux vidéo.</div>
-        
-      <div id="liens">
-        <div class="link-wrapper"><a href="#more">Plus sur moi</a></div>
-        <div class="link-wrapper"><a href="#projects">Mes projets</a></div>
-        <div class="link-wrapper"><a href="#contact">Me contacter</a></div>
+      <div id="subHome">
+        <div>
+          <div class="txtIntro" id="salut" >Salut,  Moi c'est <b>Pezel</b> !</div>
+          
+            
+          <div class="txtIntro">Je m'appelle <b>Loïc Esclapez</b>,   je suis étudiant en informatique </div>
+          <div class="txtIntro">  et je suis passionné par la création de jeux vidéo.</div>
+        </div>
+        <!-- <div id="liens">
+          <div class="link-wrapper"><a href="#more">Plus sur moi</a></div>
+          <div class="link-wrapper"><a href="#projects">Mes projets</a></div>
+          <div class="link-wrapper"><a href="#contact">Me contacter</a></div>
+        </div> -->
       </div>
 
     </div>
@@ -70,11 +128,17 @@
       <div id="more">
         <div class="titreMore">à propos de moi</div>
         
+        
+        
         <script src="Assets/JS/casseBrique.js" defer></script>
         <div class="jeu">
+
+          <div class="txtMore">
+            Patata
+          </div>
       
-          
-          <div class="fenetreJeu">
+          <div class="txtMore" id="secret">&#60;?&#62;</div>
+          <div class="fenetreJeu inactive">
   
             <div class="CB_button button"  onclick="CB_commencerJeu()">
               PLAY
@@ -89,10 +153,15 @@
             </div>
   
             <canvas id="CB_Canvas"></canvas>
+            <div class="gameFooter">
+              <span id="CB_lvl"></span><span id="CB_score"></span>
+            </div>
           </div>
-          <div class="gameFooter">
-            <span id="CB_lvl"></span><span id="CB_score"></span>
+
+          <div class="txtMore">
+            Patati
           </div>
+          
         </div> 
 
       </div>

@@ -85,12 +85,9 @@
     margin: 0 auto;
 }
 
-/* 
+
 #secret{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: var(--violet);
+    color: var(--violet);
     z-index: 10;
 }
 
@@ -98,4 +95,17 @@
 
 #secret:hover{
     cursor: help;
-} */
+}
+
+
+#more .fenetreJeu.inactive{
+    display: none;
+    transition: 0.2s ease-in-out;
+    opacity: 0;
+}
+
+#more .fenetreJeu.active{
+    display: block;
+    transition: 0.2s ease-in-out;   
+    opacity: 1;
+}

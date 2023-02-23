@@ -1,11 +1,10 @@
 #more{
     background-color: var(--violet);
-
-
+    z-index: 20;
     height: 1000px;
 
     overflow: hidden;
-
+    position: relative;
     display: flex;
 }
 
@@ -35,5 +34,10 @@
     margin-right: 0;
     text-transform: uppercase;
     font-size: 4em;
+}
+
+.txtMore{
+    font-family: 'poppins-semi-bold';
+    color: var(--violetFoncee);
 }
 

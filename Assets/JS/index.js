@@ -62,5 +62,21 @@ function randomLetterAnim()
 }
 
 
+
+const bottomBars = document.querySelector("#bottom").children
+const topBars = document.querySelector("#top").children
+
+
+for(b of bottomBars)
+{
+  b.style.animation = "bottomBarAnim 1s backwards "+(Math.random()*0.8)+"s";
+}
+
+for(b of topBars)
+{
+  b.style.animation = "topBarAnim 1s backwards "+(Math.random()*0.8)+"s";
+}
+
+
 animateIntroTexte();
 
