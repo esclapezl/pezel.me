@@ -59,19 +59,72 @@ body{
 
 
 
-
+/* nav{
+    background-color: white;
+    position: fixed;
+    display: flex;
+    padding: 10px;
+    width: 100%;
+    top: 0px;
+    z-index: 10;
+    align-items: center;
+} */
 /* Icone */
-#icon img{
+.icon img{
     width: 60px;
-    margin-top: 1%;
-    margin-left: 1%;
+    
     transition:all 0.1s linear;
     /* filter: saturate(-3) hue-rotate(180deg); */
 }
 
-#icon img:hover{
+.icon img:hover{
     transition:all 0.1s linear;
     transform: scale(120%)
+}
+
+.icon{
+    
+    position: fixed;
+    top: 5px;
+    /* background-color: white; */
+    /* border-radius: 5px; */
+    cursor: pointer;
+
+}
+
+.icon img{
+    filter: invert(52%) sepia(43%) saturate(2089%) hue-rotate(213deg) brightness(100%) contrast(102%);
+}
+
+#PzIcon{
+  left: 5px;
+}
+
+#darkModeIcon{
+   right: 80px;
+}
+
+#menu{
+    right: 5px;
+}
+
+#menuDeroulant{
+    position: absolute;
+    cursor: default;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
+
+    
+    row-gap: 25px;
+
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#menuDeroulant img{
+    height: 25px;
 }
 
 
@@ -79,7 +132,7 @@ body{
 /* STYLE DES LETTRES */
 #lettres{
     
-    margin-top: 4vh;
+    margin-top:13vh;
     margin-bottom: 5vh;
     margin-left: 3vh;
     margin-right: 3vh;
@@ -304,6 +357,80 @@ body{
     margin: 0;
 }
 
+#more{
+    background-color: white;
+    margin: 5%;
+
+    height: 1000px;
+    border-radius: 10px;
+    overflow: hidden;
+
+    display: flex;
+}
+
+#blocMore1{
+    background-color: var(--violet);
+    width: 40%;
+    height: 100%;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    justify-self: start;
+}
+
+#blocMore2{
+    background-color: var(--violetClair);
+    width: 60%;
+    height: 40%;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    justify-self: end
+}
+
+footer{
+    background-color: var(--violet);
+    
+
+    height: 100px;
+    
+}
+
+@media screen and (max-width: 800px) {
+    #more{
+        flex-direction: column;
+        
+    }
+
+    #blocMore1{
+        width: 100%;
+        height: 40%;
+        border-radius: 0px;
+    }
+
+    #blocMore2
+    {
+        width: 100%;
+        height: 30%;
+        border-radius: 0px;
+    }
+
+    #salut{ 
+        font-size: 1.5rem;
+    }
+
+    .txtIntro{
+        margin-left: 5%;
+        margin-right: 5%;
+        font-size: 1.1em; 
+    }
+
+    
+    .link-wrapper a{
+        
+        font-size: 1.1rem;
+        
+    }
+  }
 
 
 
