@@ -87,6 +87,7 @@ body{
     font-size: 1.1em;
     color: var(--violetFoncee);
     text-decoration: none;
+    z-index: 20;
     
 }
 
@@ -186,8 +187,13 @@ body{
 
 
 #PzIcon{
+    left: 20px;
+}
 
-  left: 20px;
+#PzIcon a{
+    display: block;
+    height: 50px;
+    width: 50px;
 }
 
 #darkModeIcon{
@@ -372,7 +378,7 @@ p{
 
 .link-wrapper a{
 
-    font-family: 'Poppins-bold';
+    font-family: 'Poppins-extra-bold';
    
 
     text-align: center;

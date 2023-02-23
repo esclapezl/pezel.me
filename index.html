@@ -33,7 +33,7 @@
 
 
 
-    <div style ="height: 90vh;">
+    <div id="home" style ="height: 90vh;">
     
       <div id="lettres">
         <img  src="Assets/Images/lettres/P.png">
@@ -50,9 +50,9 @@
       <div class="txtIntro">  et je suis passionné par la création de jeux vidéo.</div>
         
       <div id="liens">
-        <div class="link-wrapper"><a href="#more">•Plus sur moi</a></div>
-        <div class="link-wrapper"><a href="#projects">•Mes projets</a></div>
-        <div class="link-wrapper"><a href="#contact">•Me contacter</a></div>
+        <div class="link-wrapper"><a href="#more">Plus sur moi</a></div>
+        <div class="link-wrapper"><a href="#projects">Mes projets</a></div>
+        <div class="link-wrapper"><a href="#contact">Me contacter</a></div>
       </div>
 
     </div>
@@ -65,13 +65,36 @@
 
 
 
-
+      <link rel="stylesheet" href="Assets/CSS/jeu.css">
       <link rel="stylesheet" href="Assets/CSS/more.css">
       <div id="more">
-        <div class="titreMore">Plus sur moi</div>
-        <!--
-        <div id="blocMore1"></div>
-        <div id="blocMore2"></div>-->
+        <div class="titreMore">à propos de moi</div>
+        
+        <script src="Assets/JS/casseBrique.js" defer></script>
+        <div class="jeu">
+      
+          
+          <div class="fenetreJeu">
+  
+            <div class="CB_button button"  onclick="CB_commencerJeu()">
+              PLAY
+            </div>
+  
+            <div class="CB_button button"  onclick="CB_retryLevel()"  style="display: none;">
+              REPLAY
+            </div>
+  
+            <div class="CB_button button"  onclick="CB_nextLevel()"  style="display: none;">
+              NEXT LEVEL
+            </div>
+  
+            <canvas id="CB_Canvas"></canvas>
+          </div>
+          <div class="gameFooter">
+            <span id="CB_lvl"></span><span id="CB_score"></span>
+          </div>
+        </div> 
+
       </div>
 
       <link rel="stylesheet" href="Assets/CSS/projects.css">
@@ -90,32 +113,9 @@
     </footer>
       
 
-      <!-- <link rel="stylesheet" href="Assets/CSS/jeu.css">
+      <!-- 
 
-       <script src="Assets/JS/casseBrique.js" defer></script>
-      <div id="jeu">
-    
-        
-        <div class="fenetreJeu">
 
-          <div class="CB_button button"  onclick="CB_commencerJeu()">
-            PLAY
-          </div>
-
-          <div class="CB_button button"  onclick="CB_retryLevel()"  style="display: none;">
-            REPLAY
-          </div>
-
-          <div class="CB_button button"  onclick="CB_nextLevel()"  style="display: none;">
-            NEXT LEVEL
-          </div>
-
-          <canvas id="CB_Canvas"></canvas>
-        </div>
-        <div class="gameFooter">
-          <span id="CB_lvl"></span><span id="CB_score"></span>
-        </div>
-      </div> 
 
       <script src="Assets/JS/snake.js" defer></script>
       <div id="jeu">

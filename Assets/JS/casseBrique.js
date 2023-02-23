@@ -10,7 +10,7 @@ var ctx = canvas.getContext("2d");
 
 
 let lvlSpan = document.getElementById("CB_lvl");
-let scoreSpan = document.getElementById("CB_sscore");
+let scoreSpan = document.getElementById("CB_score");
 
 const buttons =  document.getElementsByClassName("CB_button");
 const play = buttons[0];
@@ -32,7 +32,7 @@ let levelOver = false;
 var ballX = canvas.width/2;
 var ballY = canvas.height*0.8;
 var dx = 1;
-var dy = -1;
+var dy = 1;
 
 let lvl = 0;
 let score = 0;
@@ -49,7 +49,7 @@ function CB_commencerJeu()
 function CB_nextLevel()
 {
     lvl++;
-    if(lvl < 14)
+    if(lvl > 14)
     {
         lvl = 14;
     }
@@ -136,7 +136,7 @@ function drawBall() {
 
 let ballTrailX = [];
 let ballTrailY = [];
-let nbTrail = 20;
+let nbTrail = 30;
 function drawBallTrail()
 {
     if(ballTrailX.length == nbTrail)
@@ -183,17 +183,35 @@ function drawBar()
 
 function barPos()
 {
-    if(mouseX< w/4+barSize)
+    // if(mouseX< (w/2)+barSize)
+    // {
+    //     barX = 0;
+    // }
+    // else if(mouseX > w*0.92-barSize)
+    // {
+    //     barX = canvas.width-barSize;
+    // }
+    // else
+    // {
+    //     // barX = (mouseX-(w/2)+barSize)*canvas.width/((w/2)+barSize)-barSize/2;
+    //     barX = (mouseX-(w/2));
+    // }
+
+    // barX = (mouseX-(w*0.585)) * (((w*0.585)-(w*0.902))/canvas.width);
+
+    let canvasXdeb = w*0.533;
+    let canvasXfin = w*0.902;
+    barX = -(mouseX-canvasXdeb) * (canvas.width/(canvasXdeb-canvasXfin)) - barSize/2;
+
+    console.log(mouseX)
+
+    if(barX< 0)
     {
         barX = 0;
     }
-    else if(mouseX > w*0.75-barSize)
+    else if(barX > canvas.width-barSize)
     {
         barX = canvas.width-barSize;
-    }
-    else
-    {
-        barX = (mouseX-(0.25*w))*canvas.width/(w/2)-barSize/2;
     }
 
 }
