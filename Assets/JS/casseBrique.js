@@ -108,8 +108,7 @@ function gameLoop()
     {
         if(levelOver)
         {
-            next.style.opacity = 1;
-            next.style.display = "block";
+            CB_nextLevel();
         }
         else if(gameOver)
         {
