@@ -1,0 +1,19 @@
+#projects{
+    background-color: white;
+
+
+    height: 1000px;
+
+    overflow: hidden;
+
+    display: flex;
+}
+
+.titreProjects{
+    font-family: 'poppins-extra-bold';
+    color : var(--violetFoncee);
+    height: 20vh;
+    margin:10%;
+    text-transform: uppercase;
+    font-size: 3em;
+}

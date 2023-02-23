@@ -143,7 +143,7 @@ function snakeCollision(x,y)
 
 
 
-let foodValue = 3;
+let foodValue = 5;
 let foodX = 0;
 let foodY = 0;
 function drawFood()

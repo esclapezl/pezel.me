@@ -36,7 +36,7 @@ body{
 
 
 #navWrapper{
-    top: 20px;
+    top: 30px;
     right: 30px;
     position: fixed;
     display:flex;
@@ -60,17 +60,23 @@ body{
     align-items: center;
     justify-content: center;
 
-    border: 2px solid var(--violetFoncee);
+
     
 }
 
 #navWrapper div:hover{
    transition: 0.2s ease-in-out;
-    background-color: white;
-
+    color: white;
     transform: scale(105%);
-    
+}
 
+#navWrapper div a{
+    transition: 0.2s ease-in-out;
+}
+
+#navWrapper div:hover a {
+    transition: 0.2s ease-in-out;
+    color: var(--violetClair);
 }
 
 
@@ -78,7 +84,7 @@ body{
 .nav{
     text-transform: uppercase;
     font-family: 'poppins-extra-bold';
-    font-size: 1.3em;
+    font-size: 1.1em;
     color: var(--violetFoncee);
     text-decoration: none;
     
@@ -99,8 +105,6 @@ body{
 @font-face {
     font-family: RoseBerry;
     src: url(../Fonts/Roseberry.ttf);
-
-    
 }
 
 @font-face {
@@ -119,8 +123,6 @@ body{
 @font-face {
     font-family: poppins-bold;
     src: url(../Fonts/poppins/Poppins-Bold.ttf);
-    
-    
 }
 
 @font-face {
@@ -149,35 +151,43 @@ body{
     z-index: 10;
     align-items: center;
 } */
+
 /* Icone */
 .icon img{
-    width: 60px;
-    
+    width: 50px;
+
+
+
     transition:all 0.1s linear;
     /* filter: saturate(-3) hue-rotate(180deg); */
 }
 
 .icon img:hover{
     transition:all 0.1s linear;
-    transform: scale(120%)
+    transform: scale(120%);
+
 }
 
 .icon{
     
     position: fixed;
-    top: 10px;
+    top: 20px;
     /* background-color: white; */
     /* border-radius: 5px; */
     cursor: pointer;
 
 }
 
+/*
 .icon img{
-    filter: invert(52%) sepia(43%) saturate(2089%) hue-rotate(213deg) brightness(100%) contrast(102%);
+    filter: invert(10%) sepia(35%) saturate(6868%) hue-rotate(240deg) brightness(95%) contrast(95%);
 }
+*/
+
 
 #PzIcon{
-  left: 10px;
+
+  left: 20px;
 }
 
 #darkModeIcon{
@@ -417,40 +427,16 @@ body{
     margin: 0;
 }
 
-#more{
-    background-color: white;
-   
 
-    height: 1000px;
-   
-    overflow: hidden;
-
-    display: flex;
-}
-
-#blocMore1{
-    background-color: var(--violet);
-    width: 40%;
-    height: 100%;
-   
-
-    justify-self: start;
-}
-
-#blocMore2{
-    background-color: var(--violetClair);
-    width: 60%;
-    height: 40%;
- 
-    justify-self: end
-}
 
 footer{
     background-color: var(--violet);
-    
-
     height: 100px;
-    
+}
+
+footer div{
+    font-family: 'poppins-semi-bold';
+    color: white;
 }
 
 @media screen and (max-width: 800px) {
