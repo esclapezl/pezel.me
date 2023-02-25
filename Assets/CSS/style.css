@@ -20,6 +20,8 @@ Plus foncé au plus clair
     --bleuLien: #5b5cc2;
     
     --animationSpeedLink:0.2s;
+
+    --cursorSize:16px;
 }
 
 
@@ -181,11 +183,20 @@ body{
 
 
 #bg{
+   
     position: absolute;
+   
+   
 }
+
+.hidden{
+    display: none;
+}
+
 
 #bg div img{
     position: absolute;
+    
     z-index: 0;
 }
 
@@ -209,6 +220,32 @@ body{
     }
 }
 
+#cursor{
+    display:none;
+}
+.circle{
+    z-index: 1000;
+    background-color: var(--violetFoncee);
+    position: fixed;
+    border-radius: var(--cursorSize);
+    width: var(--cursorSize);
+    height: var(--cursorSize);
+    pointer-events: none;
+    
+}
+
+#mainCircle{
+    
+    opacity: 0;
+    z-index: 5;
+    background-color: white;
+    position: fixed;
+    border-radius: calc(var(--cursorSize)*2);
+    width:  calc(var(--cursorSize)*2);
+    height:  calc(var(--cursorSize)*2);
+    pointer-events: none;
+}
+
 
 
 
@@ -216,7 +253,7 @@ body{
 #lettres{
     z-index: 1;
     margin-top:18vh;
-    margin-bottom: 13vh;
+    margin-bottom: 11vh;
     margin-left: 3vh;
     margin-right: 3vh;
     

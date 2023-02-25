@@ -66,7 +66,6 @@ function randomLetterAnim()
 const bottomBars = document.querySelector("#bottom").children
 const topBars = document.querySelector("#top").children
 
-
 for(b of bottomBars)
 {
   b.style.animation = "bottomBarAnim 1s backwards "+(Math.random()*0.8)+"s";
@@ -78,5 +77,103 @@ for(b of topBars)
 }
 
 
+//pour enlever les barres en responsive 
+
+// let bodyWidth = document.querySelector("body").offsetWidth;
+// setInterval(hideBars,100);
+
+// function hideBars(){
+//   let bars = document.getElementById("bg").children
+//   bodyWidth = document.querySelector("body").offsetWidth;
+//   if(bodyWidth <600)
+//   {
+//     for(b of bars)
+//     {
+//       b.classList.add("hidden");
+//     }
+//   }
+//   else
+//   {
+//     for(b of bars)
+//     {
+//       b.classList.remove("hidden");
+//     }
+//   }
+  
+// }
+
+
 animateIntroTexte();
 
+const mousePos = {x:0,y:0};
+const circles = document.querySelectorAll(".circle");
+const mainCircle = document.getElementById("mainCircle");
+let interacting = false;
+let cursorSize = 16;
+circles.forEach(function (circle){
+  circle.x = 0;
+  circle.y = 0;
+});
+
+window.addEventListener("mousemove", function(e){
+  this.document.getElementById("cursor").style.display="inline";
+  mousePos.x = e.clientX;
+  mousePos.y = e.clientY;
+
+   
+  interacting = e.target.closest(".interactible") !== null; 
+});
+
+function animateCircles(){
+  let x = mousePos.x;
+  let y = mousePos.y;
+
+  mainCircle.style.left = (x - cursorSize) + "px";
+  mainCircle.style.top = (y - cursorSize) + "px";
+
+  circles.forEach(function (circle, index) {
+    circle.style.left = (x - cursorSize/2) + "px";
+    circle.style.top = (y - cursorSize/2) + "px";
+    
+    circle.style.scale = (circles.length - index) / circles.length;
+    
+    circle.x = x;
+    circle.y = y;
+
+    const nextCircle = circles[index + 1] || circles[0];
+    x += (nextCircle.x - x)  * 0.1;
+    y += (nextCircle.y - y) * 0.1;
+  })
+
+  if(interacting)
+  {
+    mainCircle.style.transition =  "opacity 0.1s ease-in-out,transform 0.2s ease-in-out";
+    mainCircle.style.opacity = 0.4;
+    mainCircle.style.transform = "scale(300%)";
+    
+    
+    circles.forEach(function (circle, index) {
+      circle.style.transform = "scale(50%)";
+      circle.style.transition =  "opacity 0.2s ease-in-out,transform 0.1s ease-in-out";
+      circle.style.opacity = "0";
+    });
+  }
+  else
+  {
+  
+    mainCircle.style.opacity = 0;
+    mainCircle.style.transform = "scale(100%)";
+    mainCircle.style.transition =  "opacity 0.3s ease-in-out,transform 0.3s ease-in-out";
+
+    circles.forEach(function (circle, index) {
+      circle.style.transform = "scale(100%)";
+      circle.style.transition =  "opacity "+(0.3+(index*0.1))+"s ease-in-out,transform 0.1s ease-in-out";
+      circle.style.opacity = "1";
+      
+    });
+  }
+
+  requestAnimationFrame(animateCircles);
+}
+
+animateCircles();
