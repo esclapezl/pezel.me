@@ -27,16 +27,28 @@
 
 .titreMore{
     font-family: 'poppins-extra-bold';
-    color : var(--violetPastel);
-    height: 20vh;
-    margin-top: 10%;
-    margin-left: 5%;
-    margin-right: 0;
+    color : white;
+    height: 15vh;
+    
     text-transform: uppercase;
     font-size: 4em;
 }
 
-.txtMore{
+#left{
+    padding-top: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
+    max-width: 40%;
+}
+
+
+.txtMoreLeft{
+    font-family: 'poppins-semi-bold';
+    color: var(--violetPastel);
+    font-size: 1.2em;
+}
+
+.txtMoreRight{
     font-family: 'poppins-semi-bold';
     color: var(--violetFoncee);
 }
