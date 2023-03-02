@@ -1,11 +1,13 @@
 #more{
     background-color: var(--violet);
     z-index: 20;
-    height: 1000px;
+    
 
     overflow: hidden;
     position: relative;
     display: flex;
+    flex-direction: row;
+
 }
 
 #blocMore1{
@@ -21,8 +23,6 @@
     background-color: var(--violetClair);
     width: 60%;
     height: 40%;
-
-    justify-self: end
 }
 
 .titreMore{
@@ -32,13 +32,59 @@
     
     text-transform: uppercase;
     font-size: 4em;
+
+    margin-bottom: 50px;
+}
+
+.titreMoreRight{
+    font-family: 'poppins-extra-bold';
+    color : var(--violetFoncee);
+    
+    
+    text-transform: uppercase;
+    font-size: 2em;
+
+    padding-bottom: 5%;
+}
+
+.ligne{
+    display: flex;
+    flex-direction: row;
+    font-family: 'poppins-semi-bold';
+    color: var(--violetFoncee);
+    align-items: center;
 }
 
 #left{
     padding-top: 10%;
+    padding-bottom: 10%;
     padding-left: 5%;
     padding-right: 5%;
     max-width: 40%;
+}
+
+#right{
+    justify-self: end;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    flex-wrap: wrap;
+    align-self: center;
+
+    padding: 5%;
+
+    height: 60%;
+    width: 300px;
+
+    flex-grow: 1;
+    margin:5%;
+    border-radius: 10px;
+    box-shadow: 0px -5px 1000px var(--violetClair);
+    background-color: var(--violetClair);
+    /* border-top: 4mm solid white; */
+  
+    
+    
 }
 
 
@@ -51,5 +97,49 @@
 .txtMoreRight{
     font-family: 'poppins-semi-bold';
     color: var(--violetFoncee);
+}
+
+.rondRemplis{
+    background-color: var(--violetFoncee);
+    border: 4px solid var(--violetFoncee);
+    width: 15px;
+    height: 15px;
+    max-height: 15px;
+    min-width: 15px;
+    border-radius: 20px;
+    margin: 5%;
+}
+
+.rondVide{
+
+    
+    border: 4px solid var(--violetFoncee);
+    width: 15px;
+    height: 15px;
+    border-radius: 20px;
+    max-height: 15px;
+    min-width: 15px;
+    margin: 5%;
+}
+
+@media screen and (max-width: 900px) {
+
+    #more{
+        flex-direction: column;
+    
+    }
+
+    #left{
+        width:90%;
+        max-width: 90%;
+    }
+
+    #right{
+        
+        margin-bottom: 10%;
+    }
+    
+    
+
 }
 
