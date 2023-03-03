@@ -177,3 +177,31 @@ function animateCircles(){
 }
 
 animateCircles();
+
+
+
+var slides = document.querySelectorAll('.slide');
+var btns = document.querySelectorAll('.btn');
+let currentSlide = 1;
+
+var manualNav = function(manual){
+  slides[manual].classList.add('active');
+  btns[manual].classList.add('active');
+
+  for(let j=0;j<slides.length;j++)
+  {
+    if(j != manual)
+    {
+      slides[j].classList.remove('active');
+      btns[j].classList.remove('active');
+    }
+  }
+
+}
+
+btns.forEach((btn,i) => {
+  btn.addEventListener("click",() => {
+    manualNav(i);
+    currentSlide = i;
+  });
+})
