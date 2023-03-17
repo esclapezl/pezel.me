@@ -103,6 +103,25 @@ for(b of topBars)
 // }
 
 
+//detects if mouse is outside of the window
+let out = false;
+document.addEventListener("mouseleave", function(event){
+
+  if(event.clientY <= 0 || event.clientX <= 0 || (event.clientX >= window.innerWidth || event.clientY >= window.innerHeight))
+  {
+    out = true;
+  }
+});
+
+document.addEventListener("mouseenter", function(event){
+
+  if(event.clientY >= 0 || event.clientX >= 0 || (event.clientX >= window.innerWidth || event.clientY >= window.innerHeight))
+  {
+    out = false;
+  }
+});
+
+
 animateIntroTexte();
 
 const mousePos = {x:0,y:0};
@@ -145,13 +164,11 @@ function animateCircles(){
     y += (nextCircle.y - y) * 0.1;
   })
 
-  if(interacting)
+  if(out)
   {
-    mainCircle.style.transition =  "opacity 0.1s ease-in-out,transform 0.2s ease-in-out";
-    mainCircle.style.opacity = 0.4;
-    mainCircle.style.transform = "scale(300%)";
-    
-    
+    mainCircle.style.opacity = 0;
+    mainCircle.style.transform = "scale(100%)";
+    mainCircle.style.transition =  "opacity 0.3s ease-in-out,transform 0.3s ease-in-out";
     circles.forEach(function (circle, index) {
       circle.style.transform = "scale(50%)";
       circle.style.transition =  "opacity 0.2s ease-in-out,transform 0.1s ease-in-out";
@@ -160,18 +177,36 @@ function animateCircles(){
   }
   else
   {
-  
-    mainCircle.style.opacity = 0;
-    mainCircle.style.transform = "scale(100%)";
-    mainCircle.style.transition =  "opacity 0.3s ease-in-out,transform 0.3s ease-in-out";
-
-    circles.forEach(function (circle, index) {
-      circle.style.transform = "scale(100%)";
-      circle.style.transition =  "opacity "+(0.3+(index*0.1))+"s ease-in-out,transform 0.1s ease-in-out";
-      circle.style.opacity = "1";
+    if(interacting)
+    {
+      mainCircle.style.transition =  "opacity 0.1s ease-in-out,transform 0.2s ease-in-out";
+      mainCircle.style.opacity = 0.4;
+      mainCircle.style.transform = "scale(300%)";
       
-    });
+      
+      circles.forEach(function (circle, index) {
+        circle.style.transform = "scale(50%)";
+        circle.style.transition =  "opacity 0.2s ease-in-out,transform 0.1s ease-in-out";
+        circle.style.opacity = "0";
+      });
+    }
+    else
+    {
+    
+      mainCircle.style.opacity = 0;
+      mainCircle.style.transform = "scale(100%)";
+      mainCircle.style.transition =  "opacity 0.3s ease-in-out,transform 0.3s ease-in-out";
+  
+      circles.forEach(function (circle, index) {
+        circle.style.transform = "scale(100%)";
+        circle.style.transition =  "opacity "+(0.3+(index*0.1))+"s ease-in-out,transform 0.1s ease-in-out";
+        circle.style.opacity = "1";
+        
+      });
+    }
   }
+
+  
 
   requestAnimationFrame(animateCircles);
 }
@@ -205,3 +240,29 @@ btns.forEach((btn,i) => {
     currentSlide = i;
   });
 })
+
+// var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+// setInterval(() => {
+//   scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+//   console.log(scrollTop)
+// }, 5);
+
+let subhome = document.getElementById("subHome")
+let nav = document.getElementsByClassName("nav");
+console.log(subhome)
+window.onscroll = function() {
+
+  for(let el of nav)
+  {
+    el.style.color = checkVisible(subhome) ? 'var(--violetFoncee)' : 'white';
+  }
+  
+};
+
+function checkVisible(elm) {
+  var rect = elm.getBoundingClientRect();
+  var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+  return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+ 
+}
+
