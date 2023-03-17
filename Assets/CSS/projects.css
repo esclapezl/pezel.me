@@ -1,20 +1,24 @@
 #projects{
+    z-index: 20;
     background-color: white;
 
 
-    height: 1000px;
+    /* height: 1000px; */
 
     overflow: hidden;
 
     display: flex;
     flex-direction: column;
+    
 }
 
 .titreProjects{
     font-family: 'poppins-extra-bold';
     color : var(--violetFoncee);
-    height: 20vh;
-    margin:10%;
+    height: 15vh;
+    margin-top:5%;
+    margin-left: 5%;
+    /* transform: translateX(-50%); */
     margin-bottom: 0;
     text-transform: uppercase;
     font-size: 3em;
@@ -24,7 +28,7 @@
     position: relative;
     width: 800px;
     height: 500px;
-    margin: 10px;
+    margin-bottom: 100px;
     background: white;
     font-family: 'poppins-semi-bold';
     align-self: center;
@@ -61,7 +65,8 @@
     text-transform: uppercase;
     font-family: 'poppins-bold';
     position: absolute;
-    top: -300%;
+    top: -350%;
+   
 }
 
 .img-slider .slide .info p{
@@ -74,6 +79,7 @@
 
     position: absolute;
     top: 1650%;
+    
 }
 
 .img-slider .navigation{
