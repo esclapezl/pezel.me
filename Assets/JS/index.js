@@ -121,6 +121,8 @@ document.addEventListener("mouseenter", function(event){
   }
 });
 
+setInterval(()=>{ console.log(out)},5);
+
 
 animateIntroTexte();
 

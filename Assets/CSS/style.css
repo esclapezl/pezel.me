@@ -452,9 +452,14 @@ body{
 
 
 
-footer{
+footer #iconesFooter{
     background-color: var(--violet);
     height: 100px;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 50px;
 }
 
 footer div{
