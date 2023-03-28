@@ -121,7 +121,7 @@ document.addEventListener("mouseenter", function(event){
   }
 });
 
-setInterval(()=>{ console.log(out)},5);
+
 
 
 animateIntroTexte();
@@ -250,21 +250,37 @@ btns.forEach((btn,i) => {
 // }, 5);
 
 let subhome = document.getElementById("subHome")
-let footer = document.getElementById("iconesFooter")
+let footer = document.querySelector("footer")
 let nav = document.getElementsByClassName("nav");
-console.log(subhome)
+let projects = document.getElementById("projects");
+
 window.onscroll = function() {
 
+  
   for(let el of nav)
   {
-      if(checkVisible(subhome) && !checkVisible(footer))
-      {
-          el.style.color = 'white';
+    if(!checkVisible(subhome))
+    {
+      changeColorPalette(projectColorsPalettes[currentProject]);
+    }
+    else
+    {
+      changeColorPalette(projectColorsPalettes[0]);
+    }
 
+
+
+      if(checkVisible(footer))
+      {
+        el.style.color = 'var(--violetFoncee)';
+      }
+      else if(checkVisible(subhome))
+      {
+        el.style.color = 'var(--violetFoncee)';
       }
       else
       {
-          el.style.color = 'var(--violetFoncee)';
+        el.style.color = 'white';   
       }
   }
   
@@ -276,4 +292,72 @@ function checkVisible(elm) {
   return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
  
 }
+
+
+
+
+
+
+//gestion du selecteur de projets
+let titresProjet = document.getElementsByClassName("titreProjet");
+let currentProject = 0;
+
+  // --violetPastel:#e0deff;
+  // --violetClair:#A19DFF;
+  // --violet:#8A85FF;
+  // --violetFoncee:#242170;
+  // --violetFonceeDesature:#2c2b3a;
+  // --violetQuiClaque:#3700ff;
+  // --violetFooter:#736ef7;
+  // --bleuLien: #5b5cc2;
+
+let currentColorPalette = ["#e0def","#A19DFF","#8A85FF","#242170","#2c2b3a","#3700ff","#736ef7","#5b5cc2"];
+let projectColorsPalettes = [
+["#e0deff","#A19DFF","#8A85FF","#242170","#2c2b3a","#3700ff","#736ef7","#5b5cc2"],
+["#90c4e2","#90c4e2","#31a7e9","#2239c1","#730e00","#ff2400","#ffa916","#f5f830"],
+["#e4d4ec","#987ab3","#502564","#0c0012","#1b1020","#310e41","#eb8d9c","#ffd8ba"]]
+
+function changeColorPalette(palette)
+{
+  document.documentElement.style.setProperty('--violetPastel', palette[0]);
+  document.documentElement.style.setProperty('--violetClair', palette[1]);
+  document.documentElement.style.setProperty('--violet', palette[2]);
+  document.documentElement.style.setProperty('--violetFoncee', palette[3]);
+  document.documentElement.style.setProperty('--violetFonceeDesature', palette[4]);
+  document.documentElement.style.setProperty('--violetQuiClaque', palette[5]);
+  document.documentElement.style.setProperty('--violetFooter', palette[6]);
+  document.documentElement.style.setProperty('--bleuLien', palette[7]);
+}
+
+
+for(let titre of titresProjet)
+{
+  titre.addEventListener("click", () => {
+    if(titre.classList.contains("inactive"))
+    {
+      let index = 0;
+      for(let t of titresProjet)
+      { 
+        if(t == titre)
+        {
+          currentProject = index;
+        }
+
+
+        if(t.classList.contains("active"))
+        { 
+          t.classList.remove("active");
+          t.classList.add("inactive");
+        } 
+        index++;
+      }
+
+      titre.classList.remove("inactive");
+      titre.classList.add("active");
+      
+      changeColorPalette(projectColorsPalettes[currentProject]);
+    }
+  })
+}
+
 

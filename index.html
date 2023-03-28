@@ -7,7 +7,7 @@
     
     <title>pezel.me</title>
     <link rel="stylesheet" href="Assets/CSS/style.css">
-    <link rel="icon" href="Assets/Images/PZ_webIcon.png" type="image/x-icon">
+    <link rel="icon" href="Assets/Images/p_webicon.png" type="image/x-icon">
     <script src="Assets/JS/index.js" defer></script>
   </head>
 
@@ -16,7 +16,7 @@
 
     
       <div id="PzIcon" class="icon interactible">
-        <a href="#home"><img src="Assets/Images/PZ_contour-fonce.png"></a>
+        <a href="#home"><img src="Assets/images/p_logo2.png"></a>
       </div>
 
       <div id="navWrapper" >
@@ -290,8 +290,24 @@
       </div>
 
       <link rel="stylesheet" href="Assets/CSS/projects.css">
+
       <div id="projects" style="z-index: 20;">
-        <div class="titreProjects">Mes projets </div>
+
+        <div id="projectLayout">
+          <div id="projectWindow"></div>
+
+          <div id="titresProjets">
+            <div class="active interactible titreProjet">pezel.me</div>
+            <div class="inactive interactible titreProjet">DTC</div>
+            <div class="inactive interactible titreProjet">DTC 2</div>
+            <div class="inactive interactible titreProjet">RichVote</div>
+        
+            
+          </div>
+        </div>
+
+
+        <!--<div class="titreProjects">Mes projets </div>
         
         <div class="img-slider">
 
@@ -337,21 +353,24 @@
           </div>
 
 
-        </div>
+        </div> -->
 
       </div>
     </main>
 
-    <footer>
-      <div><span>Pour toute demande, veuillez me contacter à l'adresse suivante :</span><span>loicesclapez@gmail.com</span></div>
-      <div><span>site by Loïc Esclapez</span><span>All rights reserved</span></div>
+    <footer id="contact">
+      <div class="link-wrapper interactible"><a href="mailto:loicesclapez@gmail.com"><span id="mail">loicesclapez@gmail.com</span></a></div>
+      
 
       <div id="iconesFooter">
-        <div class="iconFooter interactible" ><a href="https://github.com/esclapezl"><img src="Assets/icons/github.svg"></div>
+        <div class="iconFooter interactible" ><a href="https://github.com/esclapezl"><img src="Assets/icons/github.svg"></a></div>
         <div class="iconFooter interactible" ><a href="https://www.instagram.com/loic_esclapez/"><img src="Assets/icons/instagram.svg"></a></div>
+        <div class="iconFooter interactible" ><a href="https://www.linkedin.com/in/lo%C3%AFc-esclapez-a88788230/"><img src="Assets/icons/linkedin.svg"></a></div>
+        <div class="iconFooter interactible" ><a href="https://www.linkedin.com/in/lo%C3%AFc-esclapez-a88788230/"><img src="Assets/icons/discord.svg"></a></div>
       </div>
 
-
+      <span>Website by Loïc Esclapez</span>
+      <span>All rights reserved</span>
     </footer>
       
 

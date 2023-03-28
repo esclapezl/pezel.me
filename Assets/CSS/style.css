@@ -22,6 +22,8 @@ Plus foncé au plus clair
     --animationSpeedLink:0.2s;
 
     --cursorSize:16px;
+
+    transition: 0.3s;
 }
 
 
@@ -87,13 +89,13 @@ body{
     display:flex;
     flex-direction: row;
     align-items: center;
-    column-gap: 2vw; 
+    column-gap: auto; 
     z-index: 50;
 }
 
 
 #navWrapper div{
-    width: 8vw;
+    width: 9vw;
     font-size: 1em;
     padding: 5px;
     padding-left: 15px;
@@ -133,6 +135,7 @@ body{
     color: var(--violetFoncee);
     text-decoration: none;
     z-index: 20;
+    white-space: nowrap;
     
 }
 
@@ -391,16 +394,17 @@ body{
     margin-right: 3%;
    
     transition:all var(--animationSpeedLink) linear;
-    animation: txtIntroAnim 0.8s both 1s;
+    /* animation: txtIntroAnim 0.8s both 1s; */
 }
+
 
 .link-wrapper a{
 
-    font-family: 'Poppins-extra-bold';
+    /* font-family: 'Poppins-extra-bold'; */
    
 
-    text-align: center;
-    text-transform:uppercase;
+    /* text-align: center;
+    text-transform:uppercase; */
 
     
     transition:all var(--animationSpeedLink) linear;
@@ -408,9 +412,9 @@ body{
     margin: auto;
     
 
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--violetFoncee);
+    /* font-size: 1.5rem;
+    font-weight: bold; */
+    color: white;
    
     overflow-wrap: break-word;
 
@@ -423,16 +427,16 @@ body{
 
 }
 
-.link-wrapper:hover a{
-    color:var(--bleuLien);
-}
+/* .link-wrapper:hover a{
+    color:var(--violetFoncee);
+} */
 
 
 .link-wrapper:after{
     content:"";
     position: absolute;
-    background-color: var(--bleuLien);
-    height:5px;
+    background-color: var(--violetFoncee);
+    height:2px;
     width:0;
     left:0;
     bottom: -5px;
@@ -453,18 +457,25 @@ body{
 
 
 footer #iconesFooter{
-    background-color: var(--violet);
     height: 100px;
+    width: auto;
     display:flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    column-gap: 50px;
+     /* justify-content: center;  */
+    column-gap: 40px;
 }
 
-footer div{
-    font-family: 'poppins-semi-bold';
+
+
+footer{
+    padding: 5%;
+    background-color: var(--violetFooter);
+    font-family: 'poppins';
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .iconFooter img{
@@ -472,6 +483,14 @@ footer div{
     height: 30px;
     fill: white;
     color: white;
+    transition: 0.3s;
+    
+}
+
+.iconFooter img:hover{
+    transform: scale(130%);
+    transform: translateY(-10%);
+    
     
 }
 

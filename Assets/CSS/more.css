@@ -28,7 +28,7 @@
 .titreMore{
     font-family: 'poppins-extra-bold';
     color : white;
-    height: 15vh;
+    height: auto;
     
     text-transform: uppercase;
     font-size: 4em;
