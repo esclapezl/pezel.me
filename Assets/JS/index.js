@@ -311,11 +311,14 @@ let currentProject = 0;
   // --violetFooter:#736ef7;
   // --bleuLien: #5b5cc2;
 
-let currentColorPalette = ["#e0def","#A19DFF","#8A85FF","#242170","#2c2b3a","#3700ff","#736ef7","#5b5cc2"];
+
 let projectColorsPalettes = [
 ["#e0deff","#A19DFF","#8A85FF","#242170","#2c2b3a","#3700ff","#736ef7","#5b5cc2"],
 ["#90c4e2","#90c4e2","#31a7e9","#2239c1","#730e00","#ff2400","#ffa916","#f5f830"],
-["#e4d4ec","#987ab3","#502564","#0c0012","#1b1020","#310e41","#eb8d9c","#ffd8ba"]]
+["#e4d4ec","#987ab3","#502564","#0c0012","#1b1020","#310e41","#eb8d9c","#ffd8ba"],
+["#acacff","#7d7dff","#6464e3","#242170","#454370","#4d47e0","#3b3bd7","#736dff"]];
+
+let currentColorPalette = projectColorsPalettes[0];
 
 function changeColorPalette(palette)
 {

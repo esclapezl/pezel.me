@@ -116,7 +116,7 @@
     flex-direction: row;
     height:100%;
     margin-top: 10%;
-    margin-bottom: 10%;
+    margin-bottom: 1%;
     margin-left: 5%;
 }
 
@@ -151,6 +151,17 @@
     color: var(--violet);
     margin: 5%;
     transform: scale(120%) translateX(10%);
+}
+
+#descriptionProjet{
+    flex-direction: column;
+    background-color: var(--violetPastel);
+    font-family: 'poppins';
+    font-size: 20px;
+    transition: 0.2s;
+    margin-bottom: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 /* @media (max-width: 820px){
