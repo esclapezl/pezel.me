@@ -250,13 +250,22 @@ btns.forEach((btn,i) => {
 // }, 5);
 
 let subhome = document.getElementById("subHome")
+let footer = document.getElementById("iconesFooter")
 let nav = document.getElementsByClassName("nav");
 console.log(subhome)
 window.onscroll = function() {
 
   for(let el of nav)
   {
-    el.style.color = checkVisible(subhome) ? 'var(--violetFoncee)' : 'white';
+      if(checkVisible(subhome) && !checkVisible(footer))
+      {
+          el.style.color = 'white';
+
+      }
+      else
+      {
+          el.style.color = 'var(--violetFoncee)';
+      }
   }
   
 };
