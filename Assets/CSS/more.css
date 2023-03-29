@@ -122,6 +122,11 @@
     margin: 5%;
 }
 
+.txtMoreLeft .link-wrapper{
+    display: inline-block;
+    
+}
+
 @media screen and (max-width: 900px) {
 
     #more{
