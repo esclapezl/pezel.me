@@ -332,6 +332,27 @@ function changeColorPalette(palette)
   document.documentElement.style.setProperty('--bleuLien', palette[7]);
 }
 
+let projectDescriptions = document.getElementsByClassName("descriptionProjet")
+//changement de texte en fonction du projet
+function changeDescription(project)
+{
+  let i = 0;
+    for(let desc of projectDescriptions)
+    {
+      if(desc.classList.contains("active") && i!=project)
+      {
+        desc.classList.remove("active");
+        desc.classList.add("inactive");
+      }
+      else if(desc.classList.contains("inactive") && i == project)
+      {
+        desc.classList.remove("inactive");
+        desc.classList.add("active");
+      }
+      i++;
+    }
+}
+
 
 for(let titre of titresProjet)
 {
@@ -359,8 +380,11 @@ for(let titre of titresProjet)
       titre.classList.add("active");
       
       changeColorPalette(projectColorsPalettes[currentProject]);
+      changeDescription(currentProject)
     }
   })
 }
+
+
 
 
