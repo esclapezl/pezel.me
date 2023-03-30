@@ -319,6 +319,7 @@ let projectColorsPalettes = [
 ["#acacff","#7d7dff","#6464e3","#242170","#454370","#4d47e0","#3b3bd7","#736dff"]];
 
 let currentColorPalette = projectColorsPalettes[0];
+let projectImage = document.getElementById("projectImg");
 
 function changeColorPalette(palette)
 {
@@ -378,7 +379,9 @@ for(let titre of titresProjet)
 
       titre.classList.remove("inactive");
       titre.classList.add("active");
-      
+
+
+      projectImage.src = "Assets/Images/slider/"+(currentProject+1)+".png";
       changeColorPalette(projectColorsPalettes[currentProject]);
       changeDescription(currentProject)
     }
